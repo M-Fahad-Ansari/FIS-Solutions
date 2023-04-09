@@ -1,27 +1,28 @@
-# FundProject
+# FIS Solutions
+
+It’s a software related to banking industry that builds loan management solutions for banks, consumer lenders, and the broader fintech industry. Our out-of-the-box core system is also fully customizable to meet your business needs – whether you’re in consumer or business lending, dealing with secured or unsecured loans. 
+
+Actors: It has different roles such as fund admin, fund supervisor, fund manager. 
+
+Components: Online and storefront lending platform fully automates lending process - from customer onboarding through loan origination, loan servicing, develop business-specific system features, integrated with local designed backend system, and take advantage of technological innovations.
+
+Workflow:
+![image](https://user-images.githubusercontent.com/21281540/230770776-77580191-639b-43c7-871a-d757bceca261.png)
+
+How Fund allocation is done:
+![image](https://user-images.githubusercontent.com/21281540/230770817-48661149-9dc8-418b-87bb-17c67b401a9b.png)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng test` 
