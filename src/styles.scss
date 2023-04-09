@@ -1,0 +1,36 @@
+ /* You can add global styles to this file, and also import other style files */
+ /* Importing Bootstrap SCSS file. */
+ 
+ @import '~bootstrap/scss/bootstrap';
+ h1,
+ h2,
+ h3,
+ h4 {
+     font-family: 'Poppins', sans-serif;
+ }
+ 
+ .box-sha {
+     box-shadow: 3px 1px 13px 1px rgba(66, 68, 90, 0.18);
+ }
+ 
+ h2 {
+     font-weight: 700 !important;
+ }
+ 
+ html,
+ body {
+     height: 100%;
+ }
+ 
+ body {
+     margin: 0;
+     font-family: Roboto, "Helvetica Neue", sans-serif;
+ }
+ 
+ .scrol {
+     .mat-tab-body-wrapper {
+         .mat-tab-body-content {
+             overflow: hidden !important;
+         }
+     }
+ }

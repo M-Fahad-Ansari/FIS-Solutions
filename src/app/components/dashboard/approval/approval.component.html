@@ -1,0 +1,63 @@
+<main role="main" class="container">
+
+    <div class="row">
+        
+        <div class="col-md-12 col-lg-12 mt-3">
+            <h2>Fund(s) For Approval</h2>
+        </div>
+        <div class="col-md-12 col-lg-6">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Fund Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Registration number</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Last Updated At</th>
+                        <th scope="col">SubFund</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fund of funds" (click)="FundSelect(fund)" [ngClass]="selectedFund && selectedFund.id == fund.id ? 'active' : ''">
+                        <td>{{fund.fund_name}}</td>
+                        <td [title]="fund.fund_description"><span class="elip">{{fund.fund_description}}</span></td>
+                        <td>{{fund.registration_no}}</td>
+                        <td *ngIf="fund.created_at">{{fund.created_at | date :'mediumDate'}} | {{ fund.created_at | date :'shortTime' }}</td>
+                        <td *ngIf="!fund.created_at"> - </td>
+                        <td *ngIf="fund.updated_at">{{fund.updated_at | date :'mediumDate'}} | {{ fund.updated_at | date :'shortTime' }}</td>
+                        <td *ngIf="!fund.updated_at"> - </td>
+                        <td>{{fund.sub_fund ? 'Yes' : 'No'}}</td>
+                    </tr>
+            
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12 col-lg-6" *ngIf="selectedFund">
+            <div class="border p-2">
+                <h3 class="h3 fw-bold">Fund Name : {{selectedFund.fund_name}}</h3>
+                <div class="d-flex justify-content-between">
+                    <div class="mb-3">
+                          <mat-button-toggle-group name="status" [(ngModel)]="status">
+                            <mat-button-toggle value="Approved"><mat-icon *ngIf="status == 'Approved'">check_circle</mat-icon>&nbsp;Approve</mat-button-toggle>
+                            <mat-button-toggle value="Rejected"><mat-icon *ngIf="status == 'Rejected'">check_circle</mat-icon>&nbsp;Reject</mat-button-toggle>
+                          </mat-button-toggle-group>
+                    </div>
+                </div>
+                <div class="mb-3">
+    
+                    <textarea class="form-control" [(ngModel)]="reason" placeholder="Enter reason" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+    
+                    <div class="mb-3">
+                        <button type="button"  class="btn btn-danger" (click)="Cancel()">CANCEL</button> &nbsp;
+                        <button type="button" [disabled]="DisableCondition()" class="btn btn-primary" (click)="Reaction()">SUBMIT</button>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "line-spin-clockwise-fade" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
